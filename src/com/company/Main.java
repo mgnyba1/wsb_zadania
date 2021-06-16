@@ -16,6 +16,8 @@ public class Main {
         me.lastName = "Kowalski";
         me.pet = dog;
         me.car = new Car("Fiat", "Panda");
+        me.getSalary();
+        me.setSalary(5000.00);
 
         me.pet.feed();
         System.out.println(me.pet.species);
