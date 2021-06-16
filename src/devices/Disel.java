@@ -2,8 +2,8 @@ package devices;
 
 public class Disel extends Car {
 
-    public Disel(String producent, String model, Double price) {
-        super(producent, model, price);
+    public Disel(String producent, String model, Double price, int productionYear) {
+        super(producent, model, price, productionYear);
     }
 
     @Override

@@ -2,8 +2,8 @@ package devices;
 
 public class LPG extends Car {
 
-    public LPG(String producent, String model, Double price) {
-        super(producent, model, price);
+    public LPG(String producent, String model, Double price, int productionYear) {
+        super(producent, model, price, productionYear);
     }
 
     @Override

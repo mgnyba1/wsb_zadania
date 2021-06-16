@@ -10,6 +10,7 @@ public abstract class Device implements Selleable {
     Integer yearOfProduction;
     public Double price;
     Boolean turnedOn;
+    public Double value;
 
     public abstract void turnOn();
 
