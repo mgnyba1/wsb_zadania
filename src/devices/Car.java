@@ -1,6 +1,6 @@
 package devices;
 
-public class Car {
+public class Car extends Device {
 
     String model = "Multipla";
     String producent = "Fiat";
@@ -17,4 +17,11 @@ public class Car {
     {
         return this.price;
     }
+
+    //Do zad. 6
+    public String toString(){
+        return model+" "+producent+" "+price;
+    }
+
+    public void turnOn() { this.turnedOn = true; };
 }
