@@ -2,7 +2,7 @@ package devices;
 
 import com.company.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
 
     String model = "Multipla";
     String producent = "Fiat";
@@ -48,4 +48,6 @@ public class Car extends Device {
     }
 
     public void turnOn() { this.turnedOn = true; };
+
+    public abstract void refuel();
 }

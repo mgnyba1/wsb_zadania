@@ -14,8 +14,13 @@ public class Main {
 
         dog.feed();
 
-        Car beatifulCar = new Car("Fiat", "Panda", 6000.0);
-        Car beatifulCar2 = new Car("Fiat", "Panda", 6000.0);
+        Car beatifulCar = new LPG("Fiat", "Panda", 6000.0);
+        Car beatifulCar2 = new LPG("Fiat", "Panda", 6000.0);
+
+        beatifulCar.refuel();
+
+        Car electricMultipla = new Electric("Fiat", "Multipla", 999999.0);
+        electricMultipla.refuel();
 
         Human me = new Human();
         me.firstName = "Jan";
