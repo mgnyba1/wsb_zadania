@@ -1,17 +1,17 @@
 package com.company;
 
+import creatures.Animal;
 import devices.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import interfaces.Selleable;
 
 public class Human {
     String firstName;
     String lastName;
-    Phone phone;
-    Animal pet;
+    Phone phone = null;
+    Animal pet = null;
     public Double cash;
     private Car car = null;
     private static Double DEFAULT_SALARY_VALUE = 1000.00;

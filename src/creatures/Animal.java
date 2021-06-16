@@ -1,10 +1,11 @@
-package com.company;
+package creatures;
 
+import com.company.Human;
 import devices.*;
 import java.io.File;
 import interfaces.*;
 
-public class Animal implements Selleable {
+public abstract class Animal implements Selleable, Feedable {
     final String species;
     String name;
     File pic;
@@ -32,7 +33,7 @@ public class Animal implements Selleable {
 
     public void sell(Human seller, Human buyer, Double price)
     {
-        if(seller.pet != this)
+        if(seller.getAnimal() != this)
         {
             System.out.println("[Error] The seller haven't got this animal!");
         }
@@ -52,7 +53,7 @@ public class Animal implements Selleable {
         System.out.println("[Success] Seller successfully sold an animal!");
     }
 
-    void feed() {
+    public void feed() {
 
         if (this.isDead == true) {
             System.out.println("You cannot feed a dead animal!");
@@ -63,9 +64,21 @@ public class Animal implements Selleable {
         System.out.println("Thx bro, my weight is now " + weight);
     }
 
-    void takeForAWalk() {
+    public void feed(Double foodWeight) {
+
+        if(this.isDead == true)
+        {
+            System.out.println("You cannot feed a dead animal!");
+            return;
+        }
+
+        weight += foodWeight;
+        System.out.println("Thx bro, my weight is now " + weight);
+    }
+
+    public void takeForAWalk() {
         if (this.isDead == true) {
-            System.out.println("You take dead animal for a walk!");
+            System.out.println("You want to take dead animal for a walk!");
             return;
         }
 
@@ -76,12 +89,27 @@ public class Animal implements Selleable {
         }
     }
 
-    void die() {
+    public void die() {
         System.out.println("The pet died!");
         this.isDead = true;
     }
 
     public String toString(){
         return species+" "+name+" "+weight;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public String getSpecies()
+    {
+        return this.species;
     }
 }

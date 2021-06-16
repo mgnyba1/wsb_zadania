@@ -1,15 +1,16 @@
 package com.company;
 
 import devices.*;
+import creatures.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("Dog", 500.0);
-        dog.name = "Reksio";
+        Pet dog = new Pet("Dog", 500.0);
+        dog.setName("Reksio");
 
-        System.out.println("Hi, I'm " + dog.name);
+        System.out.println("Hi, I'm " + dog.getName());
 
         dog.feed();
 
@@ -25,16 +26,16 @@ public class Main {
         me.setSalary(5000.00);
 
         me.pet.feed();
-        System.out.println(me.pet.species);
+        System.out.println(me.pet.getSpecies());
 
-        me.pet = new Animal("Lion", 4000.0);
-        me.pet.name = "Słoń";
+        me.pet = new FarmAnimal("Krowa", 4000.0);
+        me.pet.setName("Marcin");
 
         me.pet.feed();
 
-        System.out.println(me.pet.species);
+        System.out.println(me.pet.getSpecies());
 
-        Animal cat = new Animal("cat", 1200.00);
+        Pet cat = new Pet("cat", 1200.00);
         cat.feed();
 
         for(int i=0;i<100;i++)
