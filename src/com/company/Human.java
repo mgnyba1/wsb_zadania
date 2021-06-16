@@ -9,7 +9,7 @@ public class Human {
     String lastName;
     Phone phone;
     Animal pet;
-    Car car;
+    private Car car;
     private static Double DEFAULT_SALARY_VALUE = 1000.00;
     private Double salary = DEFAULT_SALARY_VALUE;
 
@@ -36,5 +36,31 @@ public class Human {
         this.salary = value;
 
         return true;
+    }
+
+    public Car getCar()
+    {
+        return this.car;
+    }
+
+    public boolean setCar(Car car)
+    {
+        if(this.salary > car.getPrice())
+        {
+            this.car = car;
+            System.out.println("Successfully bought a car. The car is now assigned to the human.");
+            return true;
+        }
+        else if(this.salary > car.getPrice()/12.0)
+        {
+            this.car = car;
+            System.out.println("Successfully bought a car for credit. The car is now assigned to the human.");
+            return true;
+        }
+        else
+        {
+            System.out.println("Error: You need more money to buy this car.");
+            return false;
+        }
     }
 }

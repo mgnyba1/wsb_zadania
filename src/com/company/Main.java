@@ -11,11 +11,13 @@ public class Main {
 
         dog.feed();
 
+        Car beatifulCar = new Car("Fiat", "Panda", 6000.0);
+
         Human me = new Human();
         me.firstName = "Jan";
         me.lastName = "Kowalski";
         me.pet = dog;
-        me.car = new Car("Fiat", "Panda");
+        me.setCar(beatifulCar);
         me.getSalary();
         me.setSalary(5000.00);
 
