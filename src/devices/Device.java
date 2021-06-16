@@ -1,14 +1,19 @@
 package devices;
 
-public abstract class Device {
+import com.company.Human;
+import interfaces.*;
+
+public abstract class Device implements Selleable {
 
     String producer;
     String model;
     Integer yearOfProduction;
-    Double price;
+    public Double price;
     Boolean turnedOn;
 
     public abstract void turnOn();
+
+    public Double getPrice() { return price; };
 
     public String toString(){
         return model+" "+producer+" "+yearOfProduction;

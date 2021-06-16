@@ -5,13 +5,15 @@ import devices.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import interfaces.Selleable;
 
 public class Human {
     String firstName;
     String lastName;
     Phone phone;
     Animal pet;
-    private Car car;
+    public Double cash;
+    private Car car = null;
     private static Double DEFAULT_SALARY_VALUE = 1000.00;
     private Double salary = DEFAULT_SALARY_VALUE;
 
@@ -45,6 +47,9 @@ public class Human {
         return this.car;
     }
 
+    public Phone getPhone() { return this.phone; };
+    public Animal getAnimal() { return this.pet; };
+
     public boolean setCar(Car car)
     {
         if(this.salary > car.getPrice())
@@ -65,6 +70,13 @@ public class Human {
             return false;
         }
     }
+
+    public void setPhone(Phone phone) { this.phone = phone; }
+    public void setAnimal(Animal animal) { this.pet = animal; }
+
+    public boolean hasAnyAnimal() { return this.pet == null ? false : true; }
+    public boolean hasAnyCar() { return this.car == null ? false : true; }
+    public boolean hasAnyPhone() { return this.phone == null ? false : true; }
 
     public String toString(){
         return firstName+" "+lastName+" "+phone;
