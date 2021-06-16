@@ -1,5 +1,6 @@
 package com.company;
 
+import devices.*;
 import java.io.File;
 
 public class Animal {
@@ -22,7 +23,6 @@ public class Animal {
         } else {
             weight = DEFAULT_CAT_WEIGHT;
         }
-
     }
 
     void feed() {
@@ -52,5 +52,9 @@ public class Animal {
     void die() {
         System.out.println("The pet died!");
         this.isDead = true;
+    }
+
+    public String toString(){
+        return species+" "+name+" "+weight;
     }
 }

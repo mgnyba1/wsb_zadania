@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.*;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -62,5 +64,9 @@ public class Human {
             System.out.println("Error: You need more money to buy this car.");
             return false;
         }
+    }
+
+    public String toString(){
+        return firstName+" "+lastName+" "+phone;
     }
 }

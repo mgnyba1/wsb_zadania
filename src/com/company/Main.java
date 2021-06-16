@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class Main {
         dog.feed();
 
         Car beatifulCar = new Car("Fiat", "Panda", 6000.0);
+        Car beatifulCar2 = new Car("Fiat", "Panda", 6000.0);
 
         Human me = new Human();
         me.firstName = "Jan";
@@ -38,5 +41,28 @@ public class Main {
         {
             cat.takeForAWalk();
         }
+
+        if(beatifulCar.hashCode() == beatifulCar2.hashCode())
+        {
+            if(beatifulCar.equals(beatifulCar2))
+            {
+                System.out.println("The cars objects are the same!");
+            }
+            else
+            {
+                System.out.println("The cars objects aren't the same!");
+            }
+        }
+        else
+        {
+            System.out.println("The cars objects aren't the same!");
+        }
+
+        System.out.println(beatifulCar);
+        System.out.println(beatifulCar2);
+
+        System.out.println(beatifulCar.toString());
+        System.out.println(cat.toString());
+        System.out.println(me.toString());
     }
 }
